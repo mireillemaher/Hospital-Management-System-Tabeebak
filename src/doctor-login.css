@@ -1,0 +1,147 @@
+/* Root and background styling */
+.root {
+    -fx-background-color: transparent;
+}
+
+.background-pane {
+    -fx-background-color: linear-gradient(to bottom right, #e6f7ff, #b3e0ff);
+    -fx-min-width: 100%;
+    -fx-min-height: 100%;
+}
+
+.decor-circle-1 {
+    -fx-fill: rgba(255, 255, 255, 0.15);
+    -fx-effect: dropshadow(gaussian, rgba(0,102,204,0.1), 20, 0.5, 0, 0);
+}
+
+.decor-circle-2 {
+    -fx-fill: rgba(255, 255, 255, 0.1);
+    -fx-effect: dropshadow(gaussian, rgba(0,102,204,0.1), 30, 0.5, 0, 0);
+}
+
+/* Main container styling */
+.login-container {
+    -fx-background-color: white;
+    -fx-background-radius: 15;
+    -fx-padding: 50 70 50 70;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 15, 0.5, 0, 0);
+    -fx-spacing: 25;
+    -fx-min-width: 450;
+    -fx-max-width: 450;
+}
+
+/* Logo styling */
+.logo {
+    -fx-effect: dropshadow(gaussian, rgba(0,102,204,0.2), 8, 0.5, 0, 0);
+}
+
+/* Text styling */
+.title-text {
+    -fx-font-family: 'Segoe UI', Arial, sans-serif;
+    -fx-font-size: 32px;
+    -fx-font-weight: bold;
+    -fx-fill: #0066cc;
+    -fx-effect: dropshadow(gaussian, rgba(0,102,204,0.1), 2, 0.5, 0, 0);
+}
+
+.subtitle-text {
+    -fx-font-family: 'Segoe UI', Arial, sans-serif;
+    -fx-font-size: 16px;
+    -fx-fill: #666666;
+    -fx-padding: 0 0 25 0;
+}
+
+/* Form container */
+.form-container {
+    -fx-padding: 25 0 25 0;
+    -fx-min-width: 350;
+}
+
+/* Input fields */
+.input-label {
+    -fx-font-family: 'Segoe UI', Arial, sans-serif;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #0066cc;
+}
+
+.login-field {
+    -fx-background-color: #f5f9ff;
+    -fx-background-radius: 8;
+    -fx-border-color: #cce0ff;
+    -fx-border-radius: 8;
+    -fx-border-width: 1;
+    -fx-padding: 15;
+    -fx-font-size: 16px;
+    -fx-min-width: 350;
+    -fx-pref-height: 45;
+}
+
+.login-field:focused {
+    -fx-border-color: #0066cc;
+    -fx-effect: dropshadow(gaussian, rgba(0,102,204,0.2), 8, 0.5, 0, 0);
+}
+
+/* Checkbox styling */
+.remember-checkbox {
+    -fx-font-family: 'Segoe UI', Arial, sans-serif;
+    -fx-font-size: 14px;
+    -fx-text-fill: #666666;
+}
+
+.remember-checkbox .box {
+    -fx-background-color: #f5f9ff;
+    -fx-border-color: #cce0ff;
+    -fx-border-radius: 4;
+    -fx-padding: 2;
+}
+
+.remember-checkbox:selected .mark {
+    -fx-background-color: #0066cc;
+}
+
+/* Forgot password button */
+.forgot-button {
+    -fx-background-color: transparent;
+    -fx-font-family: 'Segoe UI', Arial, sans-serif;
+    -fx-font-size: 14px;
+    -fx-text-fill: #0066cc;
+    -fx-underline: true;
+    -fx-padding: 0;
+}
+
+.forgot-button:hover {
+    -fx-text-fill: #004d99;
+    -fx-cursor: hand;
+}
+
+/* Login button */
+.login-button {
+    -fx-background-color: #0066cc;
+    -fx-background-radius: 8;
+    -fx-text-fill: white;
+    -fx-font-family: 'Segoe UI', Arial, sans-serif;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-padding: 15 50 15 50;
+    -fx-min-width: 350;
+    -fx-effect: dropshadow(gaussian, rgba(0,102,204,0.3), 8, 0.5, 0, 2);
+}
+
+.login-button:hover {
+    -fx-background-color: #004d99;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0,102,204,0.4), 10, 0.5, 0, 3);
+}
+
+.login-button:pressed {
+    -fx-background-color: #003366;
+}
+
+/* Footer text */
+.footer-text {
+    -fx-font-family: 'Segoe UI', Arial, sans-serif;
+    -fx-font-size: 12px;
+    -fx-fill: #999999;
+    -fx-padding: 30 0 0 0;
+}

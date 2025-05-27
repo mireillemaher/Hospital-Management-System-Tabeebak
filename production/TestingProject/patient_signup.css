@@ -1,0 +1,112 @@
+/* Base Styles */
+.root {
+    -fx-font-family: 'Segoe UI', Arial, sans-serif;
+    -fx-base: #f8f9fa;
+    -fx-background: #ffffff;
+}
+
+/* Form Title */
+.form-title {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-fill: #1e3a8a;
+    -fx-padding: 0 0 20 0;
+}
+
+/* Form Labels */
+.form-label {
+    -fx-font-size: 14px;
+    -fx-font-weight: 600;
+    -fx-text-fill: #374151;
+    -fx-padding: 0 10 0 0;
+}
+
+/* Text Fields */
+.form-textfield {
+    -fx-font-size: 14px;
+    -fx-padding: 8 12 8 12;
+    -fx-background-color: #ffffff;
+    -fx-border-color: #d1d5db;
+    -fx-border-radius: 4;
+    -fx-border-width: 1;
+    -fx-background-radius: 4;
+}
+
+.form-textfield:focused {
+    -fx-border-color: #3b82f6;
+    -fx-effect: dropshadow(three-pass-box, rgba(59, 130, 246, 0.2), 5, 0, 0, 0);
+}
+
+/* Text Area */
+.form-textarea {
+    -fx-font-size: 14px;
+    -fx-padding: 8 12 8 12;
+    -fx-background-color: #ffffff;
+    -fx-border-color: #d1d5db;
+    -fx-border-radius: 4;
+    -fx-border-width: 1;
+    -fx-background-radius: 4;
+}
+
+/* Radio Buttons */
+.radio-group {
+    -fx-padding: 5 0 5 0;
+}
+
+.form-radio {
+    -fx-font-size: 14px;
+    -fx-text-fill: #374151;
+}
+
+.form-radio .radio {
+    -fx-background-color: white;
+    -fx-border-color: #d1d5db;
+    -fx-border-radius: 100;
+    -fx-border-width: 1;
+    -fx-padding: 3;
+}
+
+.form-radio:selected .radio {
+    -fx-background-color: white;
+    -fx-border-color: #3b82f6;
+}
+
+.form-radio .dot {
+    -fx-background-radius: 100;
+    -fx-padding: 5;
+    -fx-background-color: transparent;
+}
+
+.form-radio:selected .dot {
+    -fx-background-color: #3b82f6;
+}
+
+/* Button Styles */
+.form-button {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+    -fx-background-color: #3b82f6;
+    -fx-background-radius: 4;
+    -fx-padding: 10 20 10 20;
+    -fx-cursor: hand;
+}
+
+.form-button:hover {
+    -fx-background-color: #2563eb;
+}
+
+.form-button:pressed {
+    -fx-background-color: #1d4ed8;
+}
+
+/* Grid Layout */
+GridPane {
+    -fx-background-color: #ffffff;
+    -fx-padding: 30;
+}
+
+/* Input Field Prompts */
+.text-input {
+    -fx-prompt-text-fill: #9ca3af;
+}

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+
+<VBox alignment="CENTER" prefHeight="500" prefWidth="600"
+      stylesheets="@login_styles.css" xmlns="http://javafx.com/javafx/21"
+      xmlns:fx="http://javafx.com/fxml/1" fx:controller="PatientLoginController">
+
+    <!-- Header Section -->
+    <StackPane style="-fx-background-color: #3a86ff; -fx-padding: 30;">
+        <Label text="Patient Portal" styleClass="header-title"/>
+    </StackPane>
+
+    <!-- Login Form -->
+    <VBox alignment="CENTER" spacing="30" style="-fx-padding: 40;">
+        <ImageView fitHeight="80" fitWidth="80">
+            <!--                <Image url="@img_1.png"/>-->
+        </ImageView>
+
+        <VBox alignment="CENTER_LEFT" spacing="15" style="-fx-padding: 30; -fx-background-color: white; -fx-background-radius: 10; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 0);">
+            <Label text="Sign In to Your Account" styleClass="form-title"/>
+
+            <VBox spacing="5">
+                <Label text="Patient ID" styleClass="input-label"/>
+                <TextField fx:id="patientIdField" styleClass="form-textfield" promptText="Enter your patient ID"/>
+            </VBox>
+
+            <VBox spacing="5">
+                <Label text="Password" styleClass="input-label"/>
+                <PasswordField fx:id="passwordField" styleClass="form-textfield" promptText="Enter your password"/>
+            </VBox>
+
+            <Button text="Login" styleClass="login-button" onAction="#handleLogin"/>
+
+            <HBox alignment="CENTER" spacing="5">
+                <Label text="New patient?" styleClass="hint-text"/>
+                <Button text="Create account" styleClass="text-button" onAction="#handleSignUpClick"/>
+            </HBox>
+        </VBox>
+    </VBox>
+</VBox>

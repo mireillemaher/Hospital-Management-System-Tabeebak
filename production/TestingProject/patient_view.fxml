@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+
+<BorderPane prefHeight="600" prefWidth="800" xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="PatientViewController"
+            stylesheets="@patient-portal.css">
+
+   <!-- Header -->
+   <top>
+      <VBox alignment="CENTER" styleClass="header-container">
+         <Label text="Patient Portal" styleClass="header-title"/>
+         <Label text="Safe and secure access to your health records" styleClass="header-subtitle"/>
+      </VBox>
+   </top>
+
+   <!-- Main Content -->
+   <center>
+      <VBox alignment="CENTER" spacing="30" styleClass="main-container">
+         <VBox alignment="CENTER" spacing="20" styleClass="login-card">
+            <Label text="Welcome Back" styleClass="welcome-text"/>
+
+            <VBox spacing="15" alignment="CENTER">
+               <Button text="Sign In to Your Account" onAction="#handleLoginButton"
+                       styleClass="primary-button"/>
+
+               <HBox alignment="CENTER" spacing="5">
+                  <Label text="Don't have an account?" styleClass="secondary-text"/>
+                  <Button text="Create Account" styleClass="text-button" onAction="#handleSignUpClick"/>
+               </HBox>
+            </VBox>
+         </VBox>
+
+         <HBox alignment="CENTER" spacing="20" styleClass="features-container">
+            <Label text="✓ 100% Secure" styleClass="feature-badge"/>
+            <Label text="✓ Easy Booking" styleClass="feature-badge"/>
+            <Label text="✓ Available 24/7" styleClass="feature-badge"/>
+         </HBox>
+      </VBox>
+   </center>
+
+   <!-- Footer -->
+   <bottom>
+      <HBox alignment="CENTER" styleClass="footer-container">
+         <Label text="© 2025 Tabeebak" styleClass="footer-text"/>
+      </HBox>
+   </bottom>
+</BorderPane>
