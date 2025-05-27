@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="PatientMainController"
+            stylesheets="@dashboard_styles.css">
+
+    <!-- Top Navigation -->
+    <top>
+        <HBox style="-fx-background-color: #2563eb; -fx-padding: 15;" alignment="CENTER">
+            <Label text="Tabeebak" style="-fx-text-fill: white; -fx-font-size: 20; -fx-font-weight: bold;"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Label fx:id="welcomeLabel" style="-fx-text-fill: white; -fx-font-size: 14;"/>
+            <Button text="My Bills" styleClass="nav-button" onAction="#handleViewBills"/>
+            <Button text="Sign Out" styleClass="nav-button" onAction="#handleSignOut"/>
+
+        </HBox>
+    </top>
+
+    <!-- Main Content -->
+    <center>
+        <TabPane fx:id="tabPane" tabClosingPolicy="UNAVAILABLE">
+            <!-- Dashboard Tab -->
+            <Tab text="Dashboard">
+                <VBox spacing="20" style="-fx-padding: 30;">
+                    <!-- Welcome Card -->
+                    <HBox styleClass="welcome-card">
+                        <VBox spacing="5">
+                            <Label fx:id="patientNameLabel" styleClass="welcome-title"/>
+                            <Label text="Your health journey at a glance" styleClass="welcome-subtitle"/>
+                        </VBox>
+                        <ImageView fitHeight="80" fitWidth="80" preserveRatio="true">
+                            <image>
+                                <!-- <Image url="@user_icon.png"/> -->
+                            </image>
+                        </ImageView>
+
+                    </HBox>
+
+                    <!-- Quick Stats -->
+                    <GridPane hgap="20" vgap="20">
+                        <!-- Next Appointment -->
+                        <VBox styleClass="stat-card" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                            <Label text="Next Appointment" styleClass="stat-title"/>
+                            <Label fx:id="nextAppointmentLabel" styleClass="stat-value"/>
+                            <Button text="View Details" styleClass="small-button" onAction="#showAppointmentHistory"/>
+
+                        </VBox>
+                    </GridPane>
+
+                </VBox>
+            </Tab>
+
+            <!-- Book Appointment Tab -->
+            <Tab text="Book Appointment">
+                <ScrollPane fitToWidth="true">
+                    <VBox spacing="15" style="-fx-padding: 20;">
+                        <Label text="New Appointment" styleClass="section-title"/>
+
+                        <GridPane hgap="10" vgap="15">
+                            <!-- Doctor Selection -->
+                            <Label text="Select Doctor:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                            <ComboBox fx:id="doctorComboBox" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+
+                            <!-- Date Selection -->
+                            <Label text="Appointment Date:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                            <DatePicker fx:id="datePicker" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+                            <!-- Time Slot -->
+                            <Label text="Time Slot:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+                            <ComboBox fx:id="timeSlotComboBox" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+
+                            <!-- Reason -->
+                            <Label text="Reason:" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+                            <TextArea fx:id="reasonTextArea" GridPane.columnIndex="1" GridPane.rowIndex="3"
+                                      prefHeight="80" prefWidth="300"/>
+                        </GridPane>
+
+                        <Button text="Book Appointment" styleClass="action-button" onAction="#handleBookAppointment"/>
+                    </VBox>
+                </ScrollPane>
+            </Tab>
+
+            <Tab fx:id="medicalRecordsTab" text="Medical Records">
+                <VBox style="-fx-padding: 20;">
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <Label text="Medical History" style="-fx-font-size: 18; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+                        <Button text="Refresh" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 5 15;" onAction="#loadMedicalRecords"/>
+                    </HBox>
+
+                    <TableView fx:id="medicalRecordsTable" style="-fx-background-color: #f8f9fa; -fx-border-color: #e0e0e0; -fx-border-radius: 5;">
+                        <columns>
+                            <TableColumn fx:id="doctorColumn1" text="Doctor" style="-fx-font-weight: bold; -fx-alignment: CENTER_LEFT;" prefWidth="170">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="doctorName"/>
+                                </cellValueFactory>
+                            </TableColumn>
+                            <TableColumn fx:id="diagnosisColumn" text="Diagnosis" style="-fx-font-weight: bold; -fx-alignment: CENTER_LEFT;" prefWidth="210">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="diagnosis"/>
+                                </cellValueFactory>
+                            </TableColumn>
+                            <TableColumn fx:id="prescriptionColumn" text="Prescription" style="-fx-font-weight: bold; -fx-alignment: CENTER_LEFT;" prefWidth="210">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="prescription"/>
+                                </cellValueFactory>
+                            </TableColumn>
+                            <TableColumn fx:id="testResultsColumn" text="Test result" style="-fx-font-weight: bold; -fx-alignment: CENTER_LEFT;" prefWidth="190">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="testResults"/>
+                                </cellValueFactory>
+                            </TableColumn>
+                        </columns>
+                    </TableView>
+                </VBox>
+            </Tab>
+
+            <!-- Appointment History Tab -->
+            <Tab fx:id="historyTab" text="Appointment History">
+                <VBox spacing="15" style="-fx-padding: 20;">
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <Label text="Your Appointment History" styleClass="section-title"/>
+                        <Button text="Refresh" styleClass="small-button" onAction="#loadAppointmentHistory"/>
+                    </HBox>
+                    <TableView fx:id="appointmentsTable" styleClass="data-table">
+                        <columns>
+                            <TableColumn text="Date" fx:id="dateColumn" prefWidth="120"/>
+                            <TableColumn text="Doctor" fx:id="doctorColumn" prefWidth="150"/>
+                            <TableColumn text="Time" fx:id="timeColumn" prefWidth="100"/>
+                            <TableColumn text="Status" fx:id="statusColumn" prefWidth="100"/>
+                            <TableColumn text="Reason" fx:id="reasonColumn" prefWidth="200"/>
+                        </columns>
+                    </TableView>
+                </VBox>
+            </Tab>
+        </TabPane>
+    </center>
+
+    <!-- Footer -->
+    <bottom>
+        <HBox alignment="CENTER" style="-fx-background-color: #f3f4f6; -fx-padding: 10;">
+            <Label text="Need help? Contact support@Tabeebak.com"
+                   style="-fx-text-fill: #6b7280; -fx-font-size: 12;"/>
+        </HBox>
+    </bottom>
+</BorderPane>

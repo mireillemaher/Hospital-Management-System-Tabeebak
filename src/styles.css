@@ -1,0 +1,100 @@
+/* Vibrant Typography */
+.hero-header {
+    -fx-text-fill: white;
+    -fx-font-size: 28px;
+    -fx-font-weight: 800;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 5, 0, 0, 1);
+}
+
+.sub-header {
+    -fx-text-fill: #b8c0ff;
+    -fx-font-size: 20px;
+    -fx-font-weight: 600;
+}
+
+.section-title {
+    -fx-text-fill: #3a0ca3;
+    -fx-font-size: 24px;
+    -fx-font-weight: 700;
+    -fx-padding: 0 0 10 0;
+}
+
+/* Feature Cards */
+.feature-card {
+    -fx-background-color: white;
+    -fx-background-radius: 15;
+    -fx-padding: 25;
+    -fx-effect: dropshadow(three-pass-box, rgba(58, 12, 163, 0.1), 15, 0, 0, 0);
+    -fx-border-radius: 15;
+    -fx-border-width: 1;
+    -fx-border-color: #e9ecef;
+    -fx-alignment: center;
+    -fx-min-width: 250;
+    -fx-transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+    -fx-effect: dropshadow(three-pass-box, rgba(74, 20, 140, 0.2), 20, 0, 0, 0);
+    -fx-translate-y: -5;
+}
+
+.feature-title {
+    -fx-text-fill: #4361ee;
+    -fx-font-size: 18px;
+    -fx-font-weight: 700;
+}
+
+.feature-details {
+    -fx-text-fill: #495057;
+    -fx-font-size: 14px;
+    -fx-text-alignment: center;
+    -fx-line-spacing: 8px;
+    -fx-padding: 0 0 15 0;
+}
+
+/* Action Buttons */
+.primary-action-btn {
+    -fx-background-color: linear-gradient(to right, #7209b7, #f72585);
+    -fx-text-fill: white;
+    -fx-font-weight: 700;
+    -fx-font-size: 14px;
+    -fx-padding: 12 30 12 30;
+    -fx-background-radius: 25;
+    -fx-cursor: hand;
+}
+
+.secondary-action-btn {
+    -fx-background-color: linear-gradient(to right, #4895ef, #4cc9f0);
+    -fx-text-fill: white;
+    -fx-font-weight: 700;
+    -fx-font-size: 14px;
+    -fx-padding: 12 30 12 30;
+    -fx-background-radius: 25;
+    -fx-cursor: hand;
+}
+
+.primary-action-btn:hover, .secondary-action-btn:hover {
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+}
+
+/* Trust Elements */
+.trust-badge {
+    -fx-text-fill: #3a0ca3;
+    -fx-font-size: 13px;
+    -fx-font-weight: 600;
+    -fx-padding: 8 15 8 15;
+    -fx-background-radius: 15;
+    -fx-background-color: #e9ecef;
+}
+
+.support-text {
+    -fx-text-fill: #6c757d;
+    -fx-font-size: 14px;
+    -fx-font-weight: 600;
+}
+
+.copyright-text {
+    -fx-text-fill: #adb5bd;
+    -fx-font-size: 12px;
+}

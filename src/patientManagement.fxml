@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+
+<BorderPane prefHeight="600" prefWidth="800" stylesheets="@style1.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PatientManagementController">
+
+    <!-- Header -->
+    <top>
+        <StackPane style="-fx-background-color: linear-gradient(to right, #4361ee, #3a0ca3);">
+            <HBox alignment="CENTER" spacing="15" style="-fx-padding: 20;">
+                <ImageView fitHeight="50" fitWidth="50" preserveRatio="true">
+                    <image>
+                        <Image url="@img_1.png" />
+                    </image>
+                    <effect>
+                        <Glow level="0.8" />
+                    </effect>
+                </ImageView>
+                <Label styleClass="app-title" text="Patient Management" />
+            </HBox>
+            <Rectangle height="3" />
+        </StackPane>
+    </top>
+
+    <!-- Main Content -->
+    <center>
+        <VBox spacing="20" style="-fx-padding: 20;">
+            <HBox alignment="CENTER_LEFT" spacing="10">
+                <TextField fx:id="searchField" prefWidth="300" promptText="Search patients..." />
+                <Button onAction="#handleSearch" styleClass="action-btn" text="Search" />
+                <Button onAction="#handleViewAll" styleClass="action-btn" text="View All" />
+            </HBox>
+
+            <TableView fx:id="patientsTable" prefHeight="400">
+                <columns>
+                    <TableColumn fx:id="idColumn" prefWidth="80" text="ID" />
+                    <TableColumn fx:id="firstNameColumn" prefWidth="120" text="First Name" />
+                    <TableColumn fx:id="lastNameColumn" prefWidth="120" text="Last Name" />
+                    <TableColumn fx:id="contactColumn" prefWidth="120" text="Contact" />
+                    <TableColumn fx:id="actionsColumn" prefWidth="150" text="Actions" />
+                </columns>
+            </TableView>
+        </VBox>
+    </center>
+
+    <!-- Footer -->
+    <bottom>
+        <HBox alignment="CENTER" spacing="20" style="-fx-padding: 15; -fx-background-color: #f8f9fa;">
+            <Button onAction="#handleBackToDashboard" styleClass="secondary-btn" text="Back to Dashboard" />
+        </HBox>
+    </bottom>
+</BorderPane>

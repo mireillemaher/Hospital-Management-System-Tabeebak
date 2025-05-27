@@ -1,0 +1,99 @@
+/* Vibrant Color Palette */
+.root {
+    -fx-font-family: 'Montserrat', 'Segoe UI', sans-serif;
+    -fx-background-color: #ffffff;
+}
+
+/* Typography */
+.app-title {
+    -fx-text-fill: white;
+    -fx-font-size: 28px;
+    -fx-font-weight: 800;
+    -fx-letter-spacing: 1px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 5, 0, 0, 1);
+}
+
+.hero-text {
+    -fx-text-fill: #3a0ca3;
+    -fx-font-size: 32px;
+    -fx-font-weight: 900;
+    -fx-text-alignment: center;
+}
+
+.subtext {
+    -fx-text-fill: #6c757d;
+    -fx-font-size: 16px;
+    -fx-font-style: italic;
+}
+
+/* Choice Cards */
+.choice-card {
+    -fx-background-color: white;
+    -fx-background-radius: 15;
+    -fx-padding: 25;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 15, 0, 0, 0);
+    -fx-border-radius: 15;
+    -fx-border-width: 1;
+    -fx-border-color: #e9ecef;
+    -fx-alignment: center;
+    -fx-min-width: 250;
+    -fx-transition: all 0.3s ease;
+}
+
+.choice-card:hover {
+    -fx-effect: dropshadow(three-pass-box, rgba(74, 20, 140, 0.2), 20, 0, 0, 0);
+    -fx-translate-y: -5;
+}
+
+.choice-title {
+    -fx-text-fill: #4361ee;
+    -fx-font-size: 18px;
+    -fx-font-weight: 700;
+    -fx-padding: 5 0 5 0;
+}
+
+.choice-details {
+    -fx-text-fill: #495057;
+    -fx-font-size: 14px;
+    -fx-text-alignment: center;
+    -fx-wrap-text: true;
+    -fx-padding: 0 0 15 0;
+}
+
+/* Buttons */
+.primary-btn {
+    -fx-background-color: linear-gradient(to right, #7209b7, #f72585);
+    -fx-text-fill: white;
+    -fx-font-weight: 700;
+    -fx-font-size: 14px;
+    -fx-padding: 12 25 12 25;
+    -fx-background-radius: 25;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(three-pass-box, rgba(114, 9, 183, 0.3), 5, 0, 0, 1);
+}
+
+.secondary-btn {
+    -fx-background-color: linear-gradient(to right, #4895ef, #4cc9f0);
+    -fx-text-fill: white;
+    -fx-font-weight: 700;
+    -fx-font-size: 14px;
+    -fx-padding: 12 25 12 25;
+    -fx-background-radius: 25;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(three-pass-box, rgba(72, 149, 239, 0.3), 5, 0, 0, 1);
+}
+
+.primary-btn:hover, .secondary-btn:hover {
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+}
+
+/* Trust Badges */
+.trust-badge {
+    -fx-text-fill: #6c757d;
+    -fx-font-size: 12px;
+    -fx-font-weight: 600;
+    -fx-padding: 5 10 5 10;
+    -fx-background-radius: 15;
+    -fx-background-color: #e9ecef;
+}

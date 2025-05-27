@@ -1,0 +1,10 @@
+public enum Specialization {
+    CARDIOLOGY,
+    NEUROLOGY,
+    ORTHOPEDICS,
+    PEDIATRICS,
+    ONCOLOGY,
+    RADIOLOGY,
+    DERMATOLOGY,
+    GENERAL_PRACTICE
+}

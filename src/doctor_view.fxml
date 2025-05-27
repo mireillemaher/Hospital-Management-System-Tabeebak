@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane stylesheets="@doctor-login.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="DoctorLoginController">
+
+    <!-- Background with medical aesthetic -->
+    <Pane styleClass="background-pane">
+        <!-- Decorative elements -->
+        <Circle layoutX="100" layoutY="100" radius="150" styleClass="decor-circle-1" />
+        <Circle layoutX="700" layoutY="400" radius="200" styleClass="decor-circle-2" />
+    </Pane>
+
+    <!-- White form container -->
+    <VBox alignment="CENTER" maxWidth="471.0" prefHeight="697.3333333333334" prefWidth="950.0" styleClass="login-container" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <!-- Logo/Header -->
+        <ImageView fitHeight="100" fitWidth="100" styleClass="logo">
+            <image>
+                <Image url="@img_3.png" />
+            </image>
+        </ImageView>
+
+        <Text styleClass="title-text" text="Doctor Portal" />
+        <Text styleClass="subtitle-text" text="Secure access to patient records" />
+
+        <!-- Form -->
+        <VBox alignment="CENTER" spacing="25" styleClass="form-container">
+            <!-- Username Field -->
+            <VBox alignment="CENTER_LEFT" spacing="5">
+                <Label styleClass="input-label" text="DOCTOR ID" />
+                <TextField fx:id="doctorIdField" promptText="Enter your doctor ID" styleClass="login-field" />
+            </VBox>
+
+            <!-- Password Field -->
+            <VBox alignment="CENTER_LEFT" spacing="5">
+                <Label styleClass="input-label" text="PASSWORD" />
+                <PasswordField fx:id="passwordField" promptText="Enter your password" styleClass="login-field" />
+            </VBox>
+
+            <!-- Remember Me -->
+            <HBox alignment="CENTER" spacing="20">
+                <CheckBox fx:id="rememberCheckbox" styleClass="remember-checkbox" text="Remember me" />
+            </HBox>
+
+            <!-- Login Button -->
+            <Button onAction="#handleLogin" styleClass="login-button" text="LOGIN" />
+        </VBox>
+    </VBox>
+</AnchorPane>

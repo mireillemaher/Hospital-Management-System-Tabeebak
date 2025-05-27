@@ -1,0 +1,77 @@
+/* Base Styles */
+.root {
+    -fx-font-family: 'Segoe UI', Arial, sans-serif;
+    -fx-background-color: #f8f9fa;
+}
+
+/* Header Styles */
+.header-title {
+    -fx-text-fill: white;
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+}
+
+/* Form Styles */
+.form-title {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333333;
+    -fx-padding: 0 0 20 0;
+}
+
+.input-label {
+    -fx-font-size: 14px;
+    -fx-font-weight: 600;
+    -fx-text-fill: #555555;
+}
+
+.form-textfield {
+    -fx-font-size: 14px;
+    -fx-padding: 10 15 10 15;
+    -fx-background-color: white;
+    -fx-border-color: #d1d5db;
+    -fx-border-radius: 5;
+    -fx-border-width: 1;
+    -fx-background-radius: 5;
+    -fx-pref-width: 300;
+}
+
+.form-textfield:focused {
+    -fx-border-color: #3a86ff;
+    -fx-effect: dropshadow(three-pass-box, rgba(58, 134, 255, 0.2), 5, 0, 0, 0);
+}
+
+/* Button Styles */
+.login-button {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+    -fx-background-color: #3a86ff;
+    -fx-background-radius: 5;
+    -fx-padding: 12 40 12 40;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 0);
+}
+
+.login-button:hover {
+    -fx-background-color: #2667cc;
+}
+
+.text-button {
+    -fx-font-size: 14px;
+    -fx-text-fill: #3a86ff;
+    -fx-background-color: transparent;
+    -fx-underline: true;
+    -fx-cursor: hand;
+    -fx-padding: 0;
+}
+
+.text-button:hover {
+    -fx-text-fill: #2667cc;
+}
+
+/* Text Styles */
+.hint-text {
+    -fx-font-size: 14px;
+    -fx-text-fill: #6b7280;
+}

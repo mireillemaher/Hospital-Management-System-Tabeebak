@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Rectangle?>
+
+<BorderPane prefHeight="300" prefWidth="600" stylesheets="@style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MainWindowController">
+
+   <!-- Vibrant Header -->
+   <top>
+      <StackPane style="-fx-background-color: linear-gradient(to right, #4361ee, #3a0ca3);">
+         <HBox alignment="CENTER" spacing="15" style="-fx-padding: 20;">
+            <ImageView fitHeight="50" fitWidth="50" preserveRatio="true">
+               <image>
+                  <Image url="@img_1.png" />
+               </image>
+               <effect>
+                  <Glow level="0.8" />
+               </effect>
+            </ImageView>
+            <Label styleClass="app-title" text="Tabeebak" />
+         </HBox>
+         <Rectangle height="3" />
+      </StackPane>
+   </top>
+
+   <!-- Engaging Main Content -->
+   <center>
+      <StackPane>
+         <Circle fill="radial-gradient(center 50% 50%, radius 50%, #f8f9fa, #e9ecef)" radius="350" />
+
+         <VBox alignment="CENTER" onDragDetected="#handleDoctorClicked" spacing="30" style="-fx-padding: 40;">
+            <Label styleClass="hero-text" text="YOUR HEALTH, OUR MISSION" />
+            <Label styleClass="subtext" text="Your gate for a better care" />
+
+            <HBox alignment="CENTER" spacing="40" style="-fx-padding: 30;">
+               <VBox alignment="CENTER" spacing="15" styleClass="choice-card">
+                  <ImageView fitHeight="80" fitWidth="80" preserveRatio="true">
+                     <image>
+                        <Image url="@img.png" />
+                     </image>
+                  </ImageView>
+                  <Label styleClass="choice-title" text="PATIENT PORTAL" />
+                  <Label styleClass="choice-details" text="Book appointments                   Track medications                   Access records 24/7" />
+                  <Button onAction="#handlePatientClick" styleClass="primary-btn" text="Get Started →" />
+               </VBox>
+
+               <VBox alignment="CENTER" spacing="15" styleClass="choice-card">
+                  <ImageView fitHeight="80" fitWidth="80" preserveRatio="true">
+                     <image>
+                        <Image url="@img_3.png" />
+                     </image>
+                  </ImageView>
+                  <Label styleClass="choice-title" text="DOCTOR DASHBOARD" />
+                  <Label styleClass="choice-details" text="Manage patients                    Update records                    Streamline workflows" />
+                  <Button onAction="#handleDoctorClicked" styleClass="secondary-btn" text="Access Now →" />
+               </VBox>
+            </HBox>
+         </VBox>
+      </StackPane>
+   </center>
+
+   <!-- Dynamic Footer -->
+   <bottom>
+      <HBox alignment="CENTER" spacing="10" style="-fx-background-color: #f8f9fa; -fx-padding: 15;">
+         <Label styleClass="trust-badge" text="⚡ Trusted by leading medical institutions" />
+         <Label styleClass="trust-badge" text="🔒 HIPAA-compliant security" />
+      </HBox>
+   </bottom>
+</BorderPane>
